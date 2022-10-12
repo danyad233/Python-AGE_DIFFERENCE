@@ -1,12 +1,17 @@
-def get_age_difference(a, b):
-    if a>b: 
-        return 'Разница года \n' + str(a - b)
+def get_age_difference(a: int, b: int):
+    c = 0
+    if a>b:
+        c = a - b
     elif b>a:
-        return 'Разница года \n' + str(b - a)
-    else:
-        return 'Разница года \n' + str(b - a)
+        c = b - a
+    else: # a equal b.
+        c = 0
+
+    return c
+
 def main():
-    print(get_age_difference(int(input('Первый год рождения ')), int(input('Второй год рождения ' ))))
+    age_diff = get_age_difference(int(input("First year of birth ")), int(input("Second birthday ")))
+    print(f'\033[32mYear difference {str(age_diff)}\033[0m')
 
 if __name__ == '__main__':
     while True:
